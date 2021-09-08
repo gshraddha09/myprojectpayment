@@ -23,17 +23,10 @@
                 placeholder="Enter receiverbic" [(ngModel)]="transaction.receiverbic" readonly>
         </div>
         <div class="form-group">
-            <label for="transfertype" 
-            class="form-label mt-4">TransferType</label>
-                <select 
-                id="transfertype" 
-                name="transfertype"         
-                class="form-select">
-                    <option value="">select transfer type</option>
-                    <option 
-                    *ngFor="let c of transfertypes" 
-                    [value]="c.code" 
-                    >{{c.name}}
+            <label for="transfertype" class="form-label mt-4">TransferType</label>
+                <select  id="transfertype" 
+                name="transfertype"  class="form-select"  <option value="">select transfer type</option>
+                    <option  *ngFor="let c of transfertypes" [value]="c.code" >{{c.name}}
                     </option>
                 </select>
         </div>
