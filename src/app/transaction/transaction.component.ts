@@ -12,19 +12,19 @@ export class TransactionComponent implements OnInit {
   constructor() { 
     this.transaction={
       customerid:"1",
-      senderbic: "hdfc",
-      recieverid:"123",
-      receiverbic:"sbi" ,  
+      senderbic: "",
+      recieverid:"",
+      receiverbic:"" ,  
       transfertypecode:"",
-      currencyamount:0,
-      transferfees:0
+      currencyamount:"",
+      transferfees:""
     }
     this.transfertypes = [{ name: "Bank to bank", code: "B2B" },
         { name: 'Customer to customer', code: "C2C" }];
   }
 
   
-  handleRegister()
+  handleTransaction()
   {
 
   }
