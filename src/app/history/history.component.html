@@ -1,37 +1,33 @@
+<div class="col-md-offset-2 " *ngIf="history.length">
 <div class="container-fluid">
     <table class="table table-hover mt-5">
         <thead>
             
-            <th>receiverid</th>
-            <th>receiverbic</th>
+            <th>Receiver Name</th>
+            <th>Receiveraccountnumber</th>
             <th>Amount</th>
-            <th>TransferType</th>
+            <th>Date</th>
+            <th>Status</th>
             <th>Message</th>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let p of dataSvc.getCartItems();let i=index;">
-                <td>{{i+1}}</td>
-                <td>{{p.name}}</td>
-                <td>{{p.category}}</td>
-                <td>{{p.price}}</td>
-                <td>{{p.quantity}}</td>
-                 <td>{{p.price*p.quantity | currency:'INR'}}</td>
-                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-danger" (click)="removeFromCart(p)">-</button>
-                    <button type="button" class="btn btn-warning" disabled>{{p.quantity}}</button>
-                    <button type="button" class="btn btn-success" (click)="addToCart(p)">+</button>
-                    <button type="button" class="btn btn-secondary" disabled>{{p.quantity*p.price|currency:'INR'}}</button>
-                  </div> -->
-            <tr>
-           
-                <td>101</td>
-                <td>500072</td>
-                <td>1000</td>
-                <td> msg</td>   
-                <td>send the message</td>
-                
+            <tr  *ngFor="let t of history">
 
+                <td style="text-align: center;">{{t.transactionid}}</td>
+                
+                <td>{{t.receiveraccountholdername}}</td>
+                <td>{{t.receiveraccountholdernumber}}</td>
+                <td>{{t.inramount}}</td>
+                <td>{{t.transferdate}}</td>   
+                <td>{{t.status}}</td>
+                <td>{{t.Message}}</td>
+    
+    
             </tr>
         </tbody>
     </table>
+</div>
+</div>
+<div *ngIf="!history.length">
+    <h2>No transactions</h2>
 </div>

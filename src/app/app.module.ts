@@ -13,7 +13,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { HistoryComponent } from './history/history.component';
 import { HeaderComponent } from './header/header.component';
 import { NavitemsComponent } from './navitems/navitems.component';
-import { LogoutComponent } from './logout/logout.component';
+import { LoginService } from './services/loginservice';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { LogoutComponent } from './logout/logout.component';
     HistoryComponent,
     HeaderComponent,
     NavitemsComponent,
-    LogoutComponent,
+    
   ],
   imports: [
     HttpClientModule,
@@ -44,9 +45,7 @@ import { LogoutComponent } from './logout/logout.component';
     {
       path:"history",component:HistoryComponent
     },
-    {
-        path:"logout",component:LogoutComponent
-    },
+   
    
     {
       path:"",component:LoginComponent
@@ -56,7 +55,7 @@ import { LogoutComponent } from './logout/logout.component';
     
     
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

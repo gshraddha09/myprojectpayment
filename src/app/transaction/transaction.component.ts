@@ -1,36 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.css']
 })
-export class TransactionComponent implements OnInit {
-
+export class TransactionComponent  {
+  registerForm:FormGroup; 
   transaction: any;
   transfertypes: any;
   constructor() { 
-    this.transaction={
-      customerid:"1",
-      senderbic: "",
-      recieverid:"",
-      receiverbic:"" ,  
-      transfertypecode:"",
-      currencyamount:"",
-      transferfees:""
-    }
-    this.transfertypes = [{ name: "Bank to bank", code: "B2B" },
-        { name: 'Customer to customer', code: "C2C" }];
-  }
+    this.registerForm = new FormGroup({
+      receiveraccountholdernumber: new FormControl('',[
+        Validators.required,
+        Validators.min(0)
+      ]),
+      receiverbic: new FormControl('',[
+        Validators.required,
+        Validators.pattern(/^[ A-Za-z0-9]*$/)
+      ]),
+      amount: new FormControl('',[
+        Validators.required,
+        Validators.min(0)
+      ]),
+     
+
+    })
+}
+
+    
 
   
-  handleTransaction()
+  handleRegister()
   {
 
   }
  
 
-  ngOnInit(): void {
-  }
+ 
 
 }
