@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
     providedIn: 'root'
   })
 export class LoginService{
-    customerid:any
+    customerid:any;
+    private messageCodeList: any;
     id=1;
     flag:any;
     userid:any
     commoncustomer:any;
     constructor(private http:HttpClient,private router:Router) {
-        this.customerid="83020817828620";
         this.commoncustomer="";
         console.log(this.commoncustomer);
      
@@ -31,6 +31,8 @@ export class LoginService{
       {
         return this.flag;
       }
-    
+      getmessageCodeList(){
+        return this.messageCodeList;
+    }
 
 }

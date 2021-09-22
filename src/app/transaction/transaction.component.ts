@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
@@ -9,7 +10,7 @@ export class TransactionComponent  {
   registerForm:FormGroup; 
   transaction: any;
   transfertypes: any;
-  constructor() { 
+  constructor(private route:Router) { 
     this.registerForm = new FormGroup({
       receiveraccountholdernumber: new FormControl('',[
         Validators.required,
@@ -28,7 +29,10 @@ export class TransactionComponent  {
     })
 }
 
-    
+apiResult={
+  success:false,
+  error:false
+}
 
   
   handleRegister()
@@ -36,7 +40,10 @@ export class TransactionComponent  {
 
   }
  
-
+  onSubmitdashboard()
+  {
+    this.route.navigate(["/dashboard"])
+  }
  
 
 }

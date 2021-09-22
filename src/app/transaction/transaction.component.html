@@ -1,4 +1,10 @@
 <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+    <div *ngIf="apiResult.error" class="alert alert-danger mt-3" role="alert">
+        <div class="text-center">Transaction  Failed !!  Please  Check  Your  Details.</div>
+     </div>
+     <div *ngIf="apiResult.success" class="alert alert-success mt-3" role="alert">
+        <div class="text-center"> Transaction  Successfull  !!  Please  check  Your  Activity  Tab.</div>
+     </div>
     
     <div class="col-md-4 offset-md-4">
         
@@ -50,6 +56,8 @@
                   </div>
         </div>   
          <div class="form-group mt-3">
+            <button type="button" (click)="onSubmitdashboard()" class="btn btn-primary btn-danger ">Go to
+                Dashboard</button>
             <button type="button" class="btn btn-primary">Send Transaction</button>
         </div>
     </div>

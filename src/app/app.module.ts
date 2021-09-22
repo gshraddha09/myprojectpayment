@@ -45,6 +45,9 @@ import { LoginService } from './services/loginservice';
     {
       path:"history",component:HistoryComponent
     },
+    {
+path:"logout",component:LoginComponent
+    },
    
    
     {

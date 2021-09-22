@@ -76,11 +76,6 @@ export class LoginComponent implements OnInit {
        this.apiResult.error =true;
    })
    }
-   
-   
-
- 
-
   get username() {
     return this.loginForm.controls['username'];
   }
